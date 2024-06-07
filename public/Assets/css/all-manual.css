@@ -1,0 +1,8 @@
+
+@font-face {
+    font-family: 'Hedvig'; 
+    src: url('/Assets/style_font/HedvigLettersSerif.ttf'); 
+}
+.h10 {
+  font-family: 'Hedvig', sans-serif; 
+}
