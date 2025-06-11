@@ -2,33 +2,33 @@
 namespace App\Models;
 use CodeIgniter\Model;
  
-class M_Kategori extends Model
+class M_Simpanan_Wajib extends Model
 {
-    protected $table = 'tbl_kategori';
+    protected $table = 'tbl_simpanan_wajib';
  
-    public function getDataKategori($where = false)
+    public function getDataAnggota($where = false)
     {
         if ($where === false) {
             $builder = $this->db->table($this->table);
             $builder->select('*');
-            $builder->orderBy('nama_kategori','ASC');
+            $builder->orderBy('id_sim_w','ASC');
             return $query = $builder->get();
         } else {
             $builder = $this->db->table($this->table);
             $builder->select('*');
             $builder->where($where);
-            $builder->orderBy('nama_kategori','ASC');
+            $builder->orderBy('id_sim_w','ASC');
             return $query = $builder->get();
         }
     }
     
-    public function saveDataKategori($data)
+    public function saveDataAnggota($data)
     {
         $builder = $this->db->table($this->table);
         return $builder->insert($data);
     }
 
-    public function updateDataKategori($data, $where)
+    public function updateDataAnggota($data, $where)
     {
         $builder = $this->db->table($this->table);
         $builder->where($where);
@@ -37,8 +37,8 @@ class M_Kategori extends Model
     
     public function autoNumber() {
         $builder = $this->db->table($this->table);
-        $builder->select("id_kategori");
-        $builder->orderBy("id_kategori", "DESC");
+        $builder->select("id_sim_w");
+        $builder->orderBy("id_sim_w", "DESC");
         $builder->limit(1);
         return $query = $builder->get();
 	}

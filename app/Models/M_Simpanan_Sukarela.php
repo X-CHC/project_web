@@ -2,33 +2,33 @@
 namespace App\Models;
 use CodeIgniter\Model;
  
-class M_Rak extends Model
+class M_Simpanan_Sukarela extends Model
 {
-    protected $table = 'tbl_rak';
+    protected $table = 'tbl_simpanan_sukarela';
  
-    public function getDataRak($where = false)
+    public function getDataAnggota($where = false)
     {
         if ($where === false) {
             $builder = $this->db->table($this->table);
             $builder->select('*');
-            $builder->orderBy('nama_rak','ASC');
+            $builder->orderBy('id_sim_s','ASC');
             return $query = $builder->get();
         } else {
             $builder = $this->db->table($this->table);
             $builder->select('*');
             $builder->where($where);
-            $builder->orderBy('nama_rak','ASC');
+            $builder->orderBy('id_sim_s','ASC');
             return $query = $builder->get();
         }
     }
     
-    public function saveDataRak($data)
+    public function saveDataAnggota($data)
     {
         $builder = $this->db->table($this->table);
         return $builder->insert($data);
     }
 
-    public function updateDataRak($data, $where)
+    public function updateDataAnggota($data, $where)
     {
         $builder = $this->db->table($this->table);
         $builder->where($where);
@@ -37,8 +37,8 @@ class M_Rak extends Model
     
     public function autoNumber() {
         $builder = $this->db->table($this->table);
-        $builder->select("id_rak");
-        $builder->orderBy("id_rak", "DESC");
+        $builder->select("id_sim_s");
+        $builder->orderBy("id_sim_s", "DESC");
         $builder->limit(1);
         return $query = $builder->get();
 	}

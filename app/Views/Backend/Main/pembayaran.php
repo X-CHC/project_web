@@ -174,36 +174,3 @@ Total Angsuran    : -</pre>
     </div><!-- row sidebar -->
 </div> <!-- container sidebar -->
 
-<script src="/Assets/js/jquery.min.js"></script>
-<script>
-$(function() {
-    var currentPage = 0;
-    var numPerPage = 5; // maks data per hal
-    var $table = $('table');
-
-    $table.bind('repaginate', function() {
-        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
-    });
-
-    $table.trigger('repaginate');
-
-    var numRows = $table.find('tbody tr').length;
-    var numPages = Math.ceil(numRows / numPerPage);
-
-    $('.pager .btn-light').eq(0).bind('click', function() {
-    if (currentPage !== 0) {
-        currentPage--;
-        $('#page-num').text('Hal : ' + (currentPage + 1) + ' dari ' + numPages);
-        $table.trigger('repaginate');
-    }
-});
-
-$('.pager .btn-light').eq(1).bind('click', function() {
-    if (currentPage < numPages - 1) {
-        currentPage++;
-        $('#page-num').text('Hal : ' + (currentPage + 1) + ' dari ' + numPages);
-        $table.trigger('repaginate');
-    }
-});
-});
-</script>

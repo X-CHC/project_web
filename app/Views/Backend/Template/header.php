@@ -1,5 +1,5 @@
 <?php
-if(session()->get('ses_id') == "" or session()->get('ses_user') == "" or session()->get('ses_level') == "" ){
+if(session()->get('ses_id') == "" or session()->get('ses_user') == "" ){
   ?>
   <script>
     alert("login expired, silahkan login ulang");
@@ -27,6 +27,29 @@ if(session()->get('ses_id') == "" or session()->get('ses_user') == "" or session
 
 
 
+<style>
+  /* dekor form */
+  .form-label {
+    background-color: #80CBC4; /* colors border*/
+    width: 100%;
+    padding: .100rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529; /* Teks colors */
+    border-radius: 100px; /* ukuran */
+}
+
+</style>
+
+<style>
+  /* di form bagian pinjaman */
+  .my-swal {
+    font-size: 0.7em !important; 
+    width: 500px !important; 
+    height: 180px !important; 
+  }
+</style>
+
 
 
 <nav class="navbar sticky-top navbar-expand-lg " style="background-color: #20B2AA;">
@@ -46,7 +69,7 @@ if(session()->get('ses_id') == "" or session()->get('ses_user') == "" or session
           </a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">
-              <img src="/Assets/img/profil.jpg" alt="bonk" class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;">
+              <img src="/Assets/img/profil.jg" alt="???" class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;">
               <h10 class="d-inline ms-2 text-dark-emphasis"><?= session()->get('ses_user'); ?></h10>
             </li>
               <li><hr class="dropdown-divider"></li>

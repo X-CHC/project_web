@@ -21,8 +21,12 @@
                                 <label for="inputUsename">Username</label>
                             </div>
                             <div class="form-floating mb-3" >
-                                <input class="form-control"  type="text" placeholder="Password" name="password" />
+                                <input class="form-control"  type="password" placeholder="Password" name="password" />
                                 <label for="inputPassword">Password</label>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-end mt-4 mb-0">
+                                
+                                <button class="btn btn-primary" type="submit">Submit</button>
                             </div>
                             
                         </form>

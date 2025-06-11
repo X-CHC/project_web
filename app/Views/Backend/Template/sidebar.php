@@ -4,14 +4,35 @@
     <div class="row">
       <div class="col-md-2 " style="background-color: #20B2AA; min-height: 100vh;">
           <ul class="list-group">
-            <li class="list-group-item bi-house <?php if($asal=='main') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/main" class="text-decoration-none text-black"> Beranda</a></li>
-            <li class="list-group-item bi-person-add <?php if($asal=='form') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/form" class="text-decoration-none text-black"> Pendaftaran</a></li>
-            <li class="list-group-item bi-people <?php if($asal=='anggota') {echo 'active';}elseif ($asal==="d_anggota"){echo "active";}?>" style="color: #808080;" aria-current="true"><a href="/admin/anggota" class="text-decoration-none text-black"> Anggota</a></li>
-            <li class="list-group-item bi-piggy-bank <?php if($asal=='simpanan') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/simpanan" class="text-decoration-none text-black"> Simpanan</a></li>
-            <li class="list-group-item bi-cash <?php if($asal=='pinjaman') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/pinjaman" class="text-decoration-none text-black"> Pinjaman</a></li>
-            <li class="list-group-item bi-cash-coin <?php if($asal=='angsuran') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/angsuran" class="text-decoration-none text-black"> Angsuran</a></li>
-            <li class="list-group-item bi-cash-stack <?php if($asal=='pembayaran') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/pembayaran" class="text-decoration-none text-black"> Pembayaran</a></li>
-              
+            <li class="list-group-item <?php if($asal=='main') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/main" class="d-flex justify-content-between bi-house  align-items-center text-decoration-none text-black">Beranda <i class="">     </i></a>
+            <li class="list-group-item <?php if($asal=='form') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/form" class="d-flex justify-content-between bi-person-add  align-items-center text-decoration-none text-black"> Pendaftaran <i class=""></i></a></li>
+            <li class="list-group-item <?php if($asal=='simpanan') {echo 'active';}?>">
+                <a class="d-flex justify-content-between bi-piggy-bank align-items-center text-decoration-none text-black" data-bs-toggle="collapse" href="#collapseSimpanan" role="button" aria-expanded="false" aria-controls="collapseExample">Simpanan
+                <i class="bi bi-chevron-down"></i>
+                </a>
+              <div class="collapse" id="collapseSimpanan">
+              <ul class="list-group">
+                <li class="list-group-item"><a href="/admin/simpanan_aktif" class="text-decoration-none text-black" style="font-size: 0.875rem;">Anggota Aktif</a></li>
+                <li class="list-group-item"><a href="/admin/simpanan_t_aktif" class="text-decoration-none text-black" style="font-size: 0.875rem;">Anggota Tidak Aktif</a></li>
+                <li class="list-group-item"><a href="/admin/simpanan_pokok" class="text-decoration-none text-black" style="font-size: 0.875rem;">Simpanan Pokok</a></li>
+                <li class="list-group-item"><a href="/admin/simpanan_sukarela" class="text-decoration-none text-black" style="font-size: 0.875rem;">Simpanan Sukarela</a></li>
+              </ul>
+              </div>
+            </li>
+            <li class="list-group-item  <?php if($asal=='pinjaman') {echo 'active';}?>">
+                <a class="d-flex justify-content-between bi-cash align-items-center text-decoration-none text-black" data-bs-toggle="collapse" href="#collapsePinjaman" role="button" aria-expanded="false" aria-controls="collapseExample">Pinjaman
+                <i class="bi bi-chevron-down"></i>
+                </a>
+              <div class="collapse" id="collapsePinjaman">
+              <ul class="list-group">
+                <li class="list-group-item"><a href="/admin/pinjaman_l" class="text-decoration-none text-black" style="font-size: 0.875rem;">Anggota Lunas</a></li>
+                <li class="list-group-item"><a href="/admin/pinjaman_bel" class="text-decoration-none text-black" style="font-size: 0.875rem;">Anggota Belum Lunas</a></li>
+                <li class="list-group-item"><a href="/admin/angsuran" class="text-decoration-none text-black" style="font-size: 0.875rem;">Angsuran</a></li>
+              </ul>
+              </div>
+            </li>
+            <li class="list-group-item <?php if($asal=='pengaturan') {echo 'active';}?>" style="color: #808080;" aria-current="true"><a href="/admin/pengaturan" class="d-flex justify-content-between bi-gear  align-items-center text-decoration-none text-black"> Pengaturan <i class=""></i></a></li>
+
 
 
       </div>
